@@ -1,7 +1,7 @@
 web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 const ethereumButton = document.querySelector('.enableEthereumButton');
 const showAccount = document.querySelector('.showAccount');
-const contract_address = '0x508139b2f1D75b300a427342B7b3662E4a643fE8';
+const contract_address = '0x313F482b7A26E8FD54f6b8498d14847F051Aa329';
 const abi = [
   {
     "constant": false,
@@ -17,8 +17,8 @@ const abi = [
     "inputs": [],
     "name": "withdraw",
     "outputs": [],
-    "payable": true,
-    "stateMutability": "payable",
+    "payable": false,
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -58,11 +58,10 @@ var Contract = ContractInstance.at(contract_address);
 
 function deposit() {
   Contract.deposit({from: web3.eth.accounts[0], value: 1*10**18});
-  console.log(Contract.balances[web3.eth.accounts[0]]);
 }
 
 function withdraw() {
-  Contract.withdraw({from: web3.eth.accounts[0], value: 1*10**18});
+  Contract.withdraw({from: web3.eth.accounts[0]});
 }
 
 function bankBalance() {
