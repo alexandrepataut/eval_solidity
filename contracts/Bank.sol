@@ -10,6 +10,7 @@ contract Bank {
     }
 
     function withdraw() public {
+        require(balances[msg.sender] >= 1*10**18);
         msg.sender.transfer(1*10**18);
         balances[msg.sender] = balances[msg.sender] - 1*10**18;
     }

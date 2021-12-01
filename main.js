@@ -1,7 +1,7 @@
 web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 const ethereumButton = document.querySelector('.enableEthereumButton');
 const showAccount = document.querySelector('.showAccount');
-const contract_address = '0x313F482b7A26E8FD54f6b8498d14847F051Aa329';
+const contract_address = '0x90b0559d0Db06d5BEF15733D2755FF38AC8371F1';
 const abi = [
   {
     "constant": false,
